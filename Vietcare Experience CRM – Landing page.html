@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vietcare Experience CRM – Quản lý khách trải nghiệm cho trung tâm dịch vụ</title>
+<meta name="description" content="Vietcare Experience CRM giúp trung tâm số hóa hồ sơ, theo dõi lịch sử trải nghiệm và chủ động chăm sóc khách có nguy cơ rời bỏ trên một hệ thống duy nhất.">
+<meta property="og:title" content="Vietcare Experience CRM">
+<meta property="og:description" content="Số hóa hồ sơ khách hàng, theo dõi từng lượt trải nghiệm, chăm sóc đúng người đúng thời điểm.">
+<meta property="og:type" content="website">
+<style>
+:root{--bg:#f6f9fd;--card:#fff;--tx:#0f1f3d;--mu:#5b6b85;--nv:#0b2a5b;--bl:#1d6fe0;--gr:#16a34a;--grbg:#e6f6ec;--bd:#e1e8f2;--sh:0 4px 18px rgba(11,42,91,.08);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a1424;--card:#111e34;--tx:#e8eefb;--mu:#9aabc7;--nv:#cfe0ff;--bd:#223454;--grbg:#12301f;--sh:0 4px 18px rgba(0,0,0,.4)}}
+:root[data-theme="dark"]{--bg:#0a1424;--card:#111e34;--tx:#e8eefb;--mu:#9aabc7;--nv:#cfe0ff;--bd:#223454;--grbg:#12301f;--sh:0 4px 18px rgba(0,0,0,.4)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:calc(70px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.6 "Inter","Segoe UI",system-ui,sans-serif}
+h1,h2,h3{line-height:1.2;margin:0 0 .5em;color:var(--nv)}h1{font-size:clamp(2rem,5vw,3.2rem)}h2{font-size:clamp(1.5rem,3.5vw,2.2rem)}h3{font-size:1.05rem}p{margin:0 0 .8em}
+.w{max-width:1120px;margin:0 auto;padding:0 20px}section{padding:72px 0}.c{text-align:center}.mu{color:var(--mu)}
+header{position:sticky;top:0;z-index:20;background:var(--card);border-bottom:1px solid var(--bd);padding-top:env(safe-area-inset-top,0px)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px;gap:12px}.logo{font-weight:800;color:var(--nv);text-decoration:none}.logo b{color:var(--bl)}
+nav a{color:var(--mu);text-decoration:none;margin-left:18px;font-size:.92rem}nav a:hover{color:var(--bl)}
+.btn{display:inline-block;border:0;border-radius:10px;padding:13px 22px;font:700 .9rem inherit;font-family:inherit;cursor:pointer;text-decoration:none;background:var(--bl);color:#fff}.btn:hover{filter:brightness(1.1)}.btn.o{background:transparent;color:var(--bl);border:2px solid var(--bl)}.btn.s{padding:8px 14px}
+.hero{display:grid;grid-template-columns:1fr 1.1fr;gap:40px;align-items:center}.hero .b{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
+.g{display:grid;gap:18px}.g3{grid-template-columns:repeat(3,1fr)}.g2{grid-template-columns:repeat(2,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:22px;box-shadow:var(--sh)}
+.ic{width:42px;height:42px;border-radius:10px;background:rgba(29,111,224,.12);color:var(--bl);display:grid;place-items:center;margin-bottom:12px}.ic svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.q{margin-top:28px;font-size:1.15rem;font-weight:700;color:var(--nv)}
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.flow .card{position:relative;padding:16px}.flow .n{font-size:.75rem;font-weight:800;color:var(--bl)}.flow h3{margin:.2em 0}.flow p{font-size:.86rem;color:var(--mu);margin:0}
+ul.ck{list-style:none;padding:0;margin:0}ul.ck li{padding-left:22px;position:relative;font-size:.9rem;color:var(--mu)}ul.ck li:before{content:"✓";position:absolute;left:0;color:var(--gr);font-weight:800}
+.mock{background:var(--card);border:1px solid var(--bd);border-radius:14px;box-shadow:var(--sh);overflow:hidden}.mock .bar{background:var(--nv);color:#fff;padding:8px 14px;font-size:.78rem;display:flex;justify-content:space-between}
+.tag{font-size:.7rem;background:var(--grbg);color:var(--gr);padding:2px 8px;border-radius:99px;font-weight:700}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:14px}.kpi{border:1px solid var(--bd);border-radius:10px;padding:10px}.kpi small{color:var(--mu);font-size:.72rem}.kpi b{display:block;font-size:1.4rem;color:var(--nv)}
+.app{display:grid;grid-template-columns:170px 1fr;min-height:440px}.side{background:var(--nv);padding:14px;display:flex;flex-direction:column;gap:6px}.side button{background:none;border:0;color:#cfe0ff;text-align:left;padding:10px;border-radius:8px;cursor:pointer;font:inherit;font-size:.88rem}.side button.on{background:rgba(255,255,255,.16);color:#fff;font-weight:700}
+.main{padding:16px;overflow-x:auto}.tools{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
+input,select,textarea{font:inherit;padding:10px 12px;border:1px solid var(--bd);border-radius:8px;background:var(--bg);color:var(--tx);width:100%}.tools input,.tools select{width:auto;flex:1;min-width:120px}
+table{width:100%;border-collapse:collapse;font-size:.86rem;min-width:520px}th,td{text-align:left;padding:9px 8px;border-bottom:1px solid var(--bd)}th{color:var(--mu);font-weight:600}
+.av{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--bl);color:#fff;font-size:.72rem;font-weight:700;margin-right:8px;vertical-align:middle}
+.st{font-size:.72rem;font-weight:700;padding:3px 9px;border-radius:99px;white-space:nowrap}.s0{background:#e0ecff;color:#1d6fe0}.s1{background:var(--grbg);color:var(--gr)}.s2{background:#fff3d6;color:#a16207}.s3{background:#fde4e4;color:#b91c1c}.s4{background:#e6e3ff;color:#4f46e5}
+.pf{display:grid;grid-template-columns:1fr 1fr;gap:12px}.pf .card{box-shadow:none;padding:14px;font-size:.88rem}.pf h3{font-size:.9rem}.pf ul{margin:0;padding-left:18px;color:var(--mu)}
+.pr .price{font-size:1.4rem;font-weight:800;color:var(--nv);margin:6px 0}.pr.hl{border:2px solid var(--bl)}
+label{display:block;font-size:.85rem;font-weight:600;margin-bottom:4px}.fg{display:grid;grid-template-columns:1fr 1fr;gap:14px}.fg .f{grid-column:span 1}.fg .full{grid-column:1/-1}.er{color:#dc2626;font-size:.78rem;min-height:1em}
+#msg{margin-top:14px;padding:12px 14px;border-radius:10px;display:none;font-size:.9rem}#msg.ok{display:block;background:var(--grbg);color:var(--gr)}#msg.bad{display:block;background:#fde4e4;color:#b91c1c}#msg.info{display:block;background:#fff3d6;color:#8a5a00}
+.fq button{width:100%;text-align:left;background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:14px 16px;font:600 .98rem inherit;font-family:inherit;color:var(--tx);cursor:pointer;display:flex;justify-content:space-between;margin-top:10px}.fq .a{display:none;padding:10px 16px;color:var(--mu);font-size:.92rem}.fq .a.open{display:block}
+footer{background:var(--nv);color:#cfe0ff;padding:40px 0;font-size:.88rem}footer a{color:#fff}
+.rv{opacity:0;transform:translateY(14px);transition:.5s}.rv.in{opacity:1;transform:none}@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+@media(max-width:860px){.hero,.g3,.g2,.g4,.pf,.fg{grid-template-columns:1fr}.flow{grid-template-columns:1fr 1fr}nav{display:none}.app{grid-template-columns:1fr}.side{flex-direction:row;overflow-x:auto}section{padding:48px 0}}
+</style>
+</head>
+<body>
+<header><div class="w nav"><a class="logo" href="#top">Vietcare <b>Experience CRM</b></a><nav id="nav"></nav><a class="btn s" href="#demo-form">ĐĂNG KÝ DEMO MIỄN PHÍ</a></div></header>
+<main id="top">
+<section><div class="w hero">
+<div><span class="tag">Dành cho trung tâm dịch vụ</span><h1>Quản lý khách trải nghiệm thông minh. Chăm sóc đúng người. Đúng thời điểm.</h1>
+<p class="mu">Vietcare Experience CRM giúp trung tâm số hóa hồ sơ, nhận diện khách hàng, theo dõi lịch sử trải nghiệm và chủ động chăm sóc khách có nguy cơ rời bỏ — trên một hệ thống duy nhất.</p>
+<p><b>“Đừng để khách hàng rời đi chỉ vì trung tâm không nhận ra.”</b></p>
+<div class="b"><a class="btn" href="#demo-form">ĐĂNG KÝ DEMO MIỄN PHÍ</a><a class="btn o" href="#giai-phap">KHÁM PHÁ TÍNH NĂNG</a></div></div>
+<div class="mock" aria-label="Mockup giao diện phần mềm"><div class="bar"><span>Vietcare · Tổng quan</span><span>Dữ liệu minh họa</span></div>
+<div class="kpis" id="heroKpi"></div><div style="padding:0 14px 14px"><b style="font-size:.85rem">Danh sách khách cần liên hệ</b><table style="min-width:0" id="heroTb"></table></div></div>
+</div></section>
+
+<section id="van-de" style="background:var(--card)"><div class="w"><h2 class="c">Bạn có đang quản lý hàng trăm khách hàng bằng sổ sách và trí nhớ?</h2><div class="g g3" id="pain" style="margin-top:28px"></div>
+<p class="q c">Vấn đề không chỉ là thiếu dữ liệu. Vấn đề là bạn chưa biến dữ liệu thành hành động.</p></div></section>
+
+<section id="giai-phap"><div class="w"><h2 class="c">Một hệ thống. Toàn bộ hành trình khách hàng.</h2><p class="c mu">Phần mềm hỗ trợ nhân viên và chủ trung tâm quản lý hành trình — không thay thế sự tư vấn và quyết định của khách hàng.</p><div class="flow" id="flow" style="margin-top:28px"></div></div></section>
+
+<section id="tinh-nang" style="background:var(--card)"><div class="w"><h2 class="c">6 nhóm tính năng chính</h2><div class="g g3" id="feat" style="margin-top:28px"></div></div></section>
+
+<section id="giao-dien"><div class="w"><h2 class="c">Trải nghiệm giao diện thực tế</h2><p class="c mu">Bản demo tương tác — tất cả dữ liệu là giả lập, không phải thông tin thật.</p>
+<div class="mock" style="margin-top:24px"><div class="bar"><span>Vietcare · Bản demo</span><span>Dữ liệu minh họa</span></div>
+<div class="app"><div class="side"><button data-v="dash" class="on">▦ Tổng quan</button><button data-v="list">☰ Khách hàng</button><button data-v="prof">◉ Hồ sơ</button></div><div class="main" id="view"></div></div></div></div></section>
+
+<section id="quy-trinh" style="background:var(--card)"><div class="w"><h2 class="c">Bắt đầu đơn giản. Quản lý bài bản hơn mỗi ngày.</h2><div class="g g4" id="steps" style="margin-top:28px"></div></div></section>
+
+<section><div class="w"><h2 class="c">Không chỉ quản lý khách hàng. Quản lý hiệu quả vận hành.</h2><div class="g g4" id="val" style="margin-top:28px"></div></div></section>
+
+<section id="bang-gia" style="background:var(--card)"><div class="w"><h2 class="c">Gói dịch vụ</h2><p class="c"><span class="tag" style="background:#fff3d6;color:#8a5a00">Giá dự kiến — xác nhận sau khi demo</span></p><div class="g g3" id="price" style="margin-top:24px"></div>
+<p class="mu c" style="margin-top:20px;font-size:.85rem">Giá là đề xuất ban đầu để khảo sát nhu cầu, chưa phải bảng giá chính thức. Giới hạn người dùng, chi phí nền tảng và phạm vi hỗ trợ sẽ được xác định trước khi công bố.</p></div></section>
+
+<section id="demo-form"><div class="w" style="max-width:760px"><h2 class="c">Trải nghiệm cách quản lý khách hàng trên một hệ thống duy nhất.</h2><p class="c mu">Để lại thông tin để được tư vấn giải pháp phù hợp với quy mô và quy trình vận hành của trung tâm.</p>
+<form id="f" class="card" novalidate><div class="fg">
+<div class="f"><label for="name">Họ và tên *</label><input id="name" autocomplete="name"><div class="er" data-e="name"></div></div>
+<div class="f"><label for="phone">Số điện thoại *</label><input id="phone" inputmode="tel" autocomplete="tel"><div class="er" data-e="phone"></div></div>
+<div class="f"><label for="center">Tên trung tâm *</label><input id="center"><div class="er" data-e="center"></div></div>
+<div class="f"><label for="city">Tỉnh/thành phố *</label><input id="city"><div class="er" data-e="city"></div></div>
+<div class="f"><label for="count">Số lượng khách hàng đang quản lý</label><select id="count"><option value="">Chọn</option><option>Dưới 100</option><option>100–500</option><option>500–2.000</option><option>Trên 2.000</option></select></div>
+<div class="f"><label for="tool">Nền tảng quản lý hiện tại</label><select id="tool"><option value="">Chọn</option><option>Sổ sách</option><option>Excel / Google Sheets</option><option>Phần mềm khác</option><option>Chưa có</option></select></div>
+<div class="full"><label for="need">Nhu cầu cần giải quyết</label><textarea id="need" rows="3"></textarea></div>
+<div class="full"><label style="font-weight:400"><input type="checkbox" id="consent" style="width:auto"> Tôi đồng ý cho phép liên hệ tư vấn. Xem <a href="#chinh-sach">chính sách quyền riêng tư</a>.</label><div class="er" data-e="consent"></div></div>
+<div class="full"><button class="btn" id="sub" type="submit" style="width:100%">ĐĂNG KÝ DEMO MIỄN PHÍ</button></div></div><div id="msg" role="status"></div></form></div></section>
+
+<section id="faq" style="background:var(--card)"><div class="w" style="max-width:760px"><h2 class="c">Câu hỏi thường gặp</h2><div class="fq" id="fq"></div></div></section>
+</main>
+<footer><div class="w g g3"><div><b style="color:#fff">Vietcare Experience CRM</b><p>Hệ thống quản lý khách trải nghiệm và chăm sóc khách hàng cho trung tâm dịch vụ.</p></div>
+<div><b style="color:#fff">Liên hệ</b><p>Địa chỉ: [Cập nhật địa chỉ]<br>Điện thoại: [Cập nhật số điện thoại]<br>Email: [Cập nhật email]</p></div>
+<div id="chinh-sach"><a href="#chinh-sach">Chính sách quyền riêng tư</a> [liên kết sẽ cập nhật]<br><a href="#chinh-sach">Điều khoản sử dụng</a> [liên kết sẽ cập nhật]<p style="margin-top:12px">© 2026 [Tên pháp nhân]. Bảo lưu mọi quyền.</p></div></div></footer>
+
+<script>
+const ENDPOINT=""; // Cấu hình URL backend nhận đăng ký (HTTPS) để gửi dữ liệu thật
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const P={user:'<circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/>',eye:'<circle cx="12" cy="12" r="3"/><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/>',clock:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',bell:'<path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9M10 21h4"/>',chart:'<path d="M4 20V10M10 20V4M16 20v-8M22 20H2"/>',cart:'<circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/><path d="M2 3h3l3 12h11l2-8H6"/>',check:'<path d="M20 6 9 17l-5-5"/>',list:'<path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/>',edit:'<path d="M12 20h9M16 4l4 4L8 20H4v-4z"/>',users:'<circle cx="9" cy="8" r="3.5"/><path d="M2 21c0-4 3-6 7-6s7 2 7 6M17 4a3.5 3.5 0 0 1 0 7M22 21c0-3-2-5-5-5.5"/>'};
+const ic=n=>`<div class="ic"><svg viewBox="0 0 24 24">${P[n]}</svg></div>`;
+const nav=[["van-de","Vấn đề"],["giai-phap","Giải pháp"],["tinh-nang","Tính năng"],["giao-dien","Giao diện"],["bang-gia","Gói dịch vụ"],["faq","FAQ"]];
+$("#nav").innerHTML=nav.map(n=>`<a href="#${n[0]}">${n[1]}</a>`).join("");
+const pain=[["edit","Nhập thông tin thủ công","Nhân viên mất nhiều thời gian ghi chép mỗi ngày."],["user","Không nhận diện được khách","Khó nhớ mặt, khó tra cứu hồ sơ khi khách đến."],["clock","Không biết lịch sử đến","Không rõ khách đã trải nghiệm bao nhiêu lần."],["eye","Khách nghỉ mà không ai biết","Chỉ phát hiện khi khách đã biến mất."],["bell","Không biết khách nào cần tư vấn","Chăm sóc theo cảm tính, dễ bỏ lỡ cơ hội."],["chart","Không có số liệu quản trị","Khó biết vì sao khách giảm và doanh thu chưa đạt mục tiêu."]];
+$("#pain").innerHTML=pain.map(p=>`<div class="card rv">${ic(p[0])}<h3>${p[1]}</h3><p class="mu" style="margin:0">${p[2]}</p></div>`).join("");
+const flow=[["Đăng ký","Tạo hồ sơ khách hàng số."],["Nhận diện","Tra cứu nhanh khi khách đến."],["Check-in","Ghi nhận mỗi lượt đến."],["Theo dõi trải nghiệm","Xem lịch sử và tần suất."],["Chăm sóc","Nhắc việc, liên hệ đúng lúc."],["Tư vấn","Ghi nhu cầu và sản phẩm quan tâm."],["Mua hàng","Ghi nhận kết quả khách tự quyết định."],["Chăm sóc sau bán","Duy trì quan hệ lâu dài."]];
+$("#flow").innerHTML=flow.map((f,i)=>`<div class="card rv"><div class="n">BƯỚC ${i+1}</div><h3>${f[0]}</h3><p>${f[1]}</p></div>`).join("");
+const feat=[["user","Hồ sơ khách hàng số",["Thông tin khách hàng","Ảnh nhận diện","Số điện thoại","Ngày đăng ký","Nguồn giới thiệu","Nhân viên phụ trách"]],["check","Check-in trải nghiệm",["Ghi nhận lượt đến","Thời gian trải nghiệm","Lịch sử theo ngày, tuần, tháng","Tra cứu nhanh khách hàng"]],["eye","Theo dõi khách hàng",["Khách mới","Khách trải nghiệm đều","Khách giảm tần suất","Khách lâu ngày chưa quay lại","Khách đã mua"]],["bell","Chăm sóc tự động",["Nhắc việc nhân viên","Danh sách khách cần liên hệ","Theo dõi kết quả chăm sóc","Ghi nhận lý do khách nghỉ"]],["cart","Quản lý tư vấn và bán hàng",["Sản phẩm quan tâm","Lịch sử tư vấn","Lịch hẹn tiếp theo","Kết quả chuyển đổi","Chăm sóc sau bán"]],["chart","Dashboard quản trị",["Số khách mới","Tổng lượt trải nghiệm","Tỷ lệ khách quay lại","Hiệu suất nhân viên","Tỷ lệ chuyển đổi trải nghiệm → mua"]]];
+$("#feat").innerHTML=feat.map(f=>`<div class="card rv">${ic(f[0])}<h3>${f[1]}</h3><ul class="ck">${f[2].map(x=>`<li>${x}</li>`).join("")}</ul></div>`).join("");
+const steps=["Đăng ký thông tin khách hàng.","Nhân viên check-in mỗi lần khách đến.","Hệ thống cập nhật lịch sử và nhận diện khách cần chăm sóc.","Chủ trung tâm theo dõi dashboard và điều phối công việc."];
+$("#steps").innerHTML=steps.map((s,i)=>`<div class="card rv c"><div class="ic" style="margin:0 auto 12px;font-weight:800">${i+1}</div><p style="margin:0">${s}</p></div>`).join("");
+const val=[["edit","Giảm thao tác ghi chép thủ công"],["bell","Hạn chế bỏ sót khách cần chăm sóc"],["users","Minh bạch hiệu quả công việc của nhân viên"],["chart","Dữ liệu hỗ trợ quyết định kinh doanh"]];
+$("#val").innerHTML=val.map(v=>`<div class="card rv">${ic(v[0])}<h3 style="margin:0">${v[1]}</h3></div>`).join("");
+const plans=[["CƠ BẢN","299.000–499.000","Dành cho trung tâm nhỏ.",["Hồ sơ khách hàng","Check-in","Lịch sử trải nghiệm","Báo cáo cơ bản"]],["QUẢN LÝ","699.000–1.200.000","Dành cho trung tâm cần quản lý đội ngũ.",["Toàn bộ tính năng cơ bản","Phân nhóm khách hàng","Nhắc việc chăm sóc","Quản lý tư vấn","Dashboard nâng cao"],1],["THÔNG MINH","1.500.000–3.000.000","Dành cho trung tâm cần tự động hóa.",["Toàn bộ tính năng quản lý","Tự động hóa quy trình","Phân tích dữ liệu nâng cao","Hỗ trợ AI khi được triển khai"]]];
+$("#price").innerHTML=plans.map(p=>`<div class="card pr rv ${p[4]?"hl":""}"><h3>Gói ${p[0]}</h3><div class="price">${p[1]} <small style="font-size:.7rem">VNĐ/tháng</small></div><p class="mu">${p[2]}</p><ul class="ck">${p[3].map(x=>`<li>${x}</li>`).join("")}</ul><a class="btn ${p[4]?"":"o"}" style="margin-top:16px;width:100%;text-align:center" href="#demo-form">ĐĂNG KÝ DEMO MIỄN PHÍ</a></div>`).join("");
+const faq=[["Phần mềm có phù hợp với trung tâm nhỏ không?","Được thiết kế để bắt đầu từ quy mô nhỏ với gói cơ bản; phạm vi cụ thể sẽ được trao đổi trong buổi demo."],["Có thể quản lý nhiều nhân viên không?","Mục tiêu của hệ thống là phân công nhân viên phụ trách và theo dõi hiệu suất. Chi tiết số người dùng sẽ xác nhận khi demo."],["Có lưu ảnh khách hàng không?","Hồ sơ dự kiến có ảnh nhận diện. Việc lưu ảnh cần có sự đồng ý của khách hàng và cấu hình bảo mật phù hợp."],["Có theo dõi khách nghỉ trải nghiệm không?","Có trong phạm vi thiết kế: hệ thống đánh dấu khách giảm tần suất hoặc lâu chưa quay lại. Bản trên trang này chỉ là minh họa."],["Có thể xem báo cáo trên điện thoại không?","Giao diện được thiết kế responsive. Trải nghiệm thực tế sẽ được xác nhận trên bản triển khai."],["Có thể chuyển dữ liệu từ Excel sang không?","Đây là nhu cầu phổ biến; khả năng và cách nhập dữ liệu sẽ được tư vấn cụ thể sau khi tìm hiểu dữ liệu của trung tâm."],["Dữ liệu của mỗi trung tâm có được tách biệt không?","Tách biệt dữ liệu là yêu cầu bắt buộc khi triển khai thương mại; cơ chế cụ thể sẽ được công bố trước khi vận hành."],["Chi phí triển khai và sử dụng được tính như thế nào?","Giá dự kiến theo gói tháng, chưa phải bảng giá chính thức. Chi phí cuối cùng được xác nhận sau demo."],["Tôi có thể xem demo trước khi đăng ký không?","Bạn có thể thử bản giao diện minh họa ở phần “Giao diện thực tế”, hoặc đăng ký để được demo trực tiếp."]];
+$("#fq").innerHTML=faq.map((q,i)=>`<div><button aria-expanded="false" aria-controls="a${i}"><span>${q[0]}</span><span>＋</span></button><div class="a" id="a${i}">${q[1]}</div></div>`).join("");
+$$("#fq button").forEach(b=>b.onclick=()=>{const a=b.nextElementSibling,o=a.classList.toggle("open");b.setAttribute("aria-expanded",o);b.lastChild.textContent=o?"－":"＋"});
+// Demo data (giả lập)
+const ST=["Khách mới","Trải nghiệm đều","Giảm tần suất","Lâu chưa quay lại","Đã mua"];
+const C=[["Nguyễn Minh A",0,2,1,"Cần gọi","Chị Lan"],["Trần Thu B",14,1,1,"Đã chăm sóc","Anh Hùng"],["Lê Văn C",5,9,2,"Cần gọi","Chị Lan"],["Phạm Ngọc D",22,21,3,"Cần gọi","Anh Hùng"],["Hoàng Kim E",31,0,4,"Sau bán","Chị Mai"],["Vũ Thanh F",9,12,2,"Đã hẹn","Chị Mai"],["Đỗ Quang G",3,0,0,"Chờ tư vấn","Chị Lan"],["Bùi Hà H",18,35,3,"Cần gọi","Anh Hùng"]];
+const ini=n=>n.split(" ").slice(-1)[0][0];
+const KP={1:[["Khách đang hoạt động","128"],["Lượt trải nghiệm","24"],["Cần chăm sóc","9"],["Giảm tần suất","14"],["Tỷ lệ quay lại","68%"],["Khách mới","3"]],7:[["Khách đang hoạt động","142"],["Lượt trải nghiệm","171"],["Cần chăm sóc","12"],["Giảm tần suất","17"],["Tỷ lệ quay lại","71%"],["Khách mới","15"]],30:[["Khách đang hoạt động","156"],["Lượt trải nghiệm","702"],["Cần chăm sóc","18"],["Giảm tần suất","22"],["Tỷ lệ quay lại","64%"],["Khách mới","41"]]};
+const kp=a=>a.map(k=>`<div class="kpi"><small>${k[0]}</small><b>${k[1]}</b></div>`).join("");
+$("#heroKpi").innerHTML=kp(KP[7]);
+$("#heroTb").innerHTML=C.filter(c=>c[4]=="Cần gọi").slice(0,3).map(c=>`<tr><td><span class="av">${ini(c[0])}</span>${c[0]}</td><td class="mu">${c[2]} ngày chưa đến</td><td><span class="st s${c[3]}">${ST[c[3]]}</span></td></tr>`).join("");
+let view="dash",range=7,q="",sf="",cur=0;
+function render(){$$(".side button").forEach(b=>b.classList.toggle("on",b.dataset.v==view));const v=$("#view");
+if(view=="dash"){v.innerHTML=`<div class="tools"><b style="align-self:center">Tổng quan</b><select id="rg"><option value="1">Hôm nay</option><option value="7">7 ngày</option><option value="30">30 ngày</option></select></div><div class="kpis" style="padding:0;grid-template-columns:repeat(3,1fr)">${kp(KP[range])}</div><p class="mu" style="font-size:.78rem;margin-top:10px">Dữ liệu minh họa — không phải kết quả kinh doanh thực tế.</p>`;$("#rg").value=range;$("#rg").onchange=e=>{range=+e.target.value;render()}}
+else if(view=="list"){const rows=C.map((c,i)=>[c,i]).filter(([c])=>c[0].toLowerCase().includes(q.toLowerCase())&&(sf===""||c[3]==sf));
+v.innerHTML=`<div class="tools"><input id="sq" placeholder="Tìm khách hàng…" aria-label="Tìm khách hàng" value="${q}"><select id="sf" aria-label="Lọc trạng thái"><option value="">Mọi trạng thái</option>${ST.map((s,i)=>`<option value="${i}">${s}</option>`).join("")}</select></div><table><tr><th>Khách hàng</th><th>Lượt</th><th>Lần gần nhất</th><th>Trạng thái</th><th>Chăm sóc</th><th></th></tr>${rows.map(([c,i])=>`<tr><td><span class="av">${ini(c[0])}</span>${c[0]}</td><td>${c[1]}</td><td>${c[2]?c[2]+" ngày trước":"Hôm nay"}</td><td><span class="st s${c[3]}">${ST[c[3]]}</span></td><td>${c[4]}</td><td><button class="btn s" data-i="${i}">Xem hồ sơ</button></td></tr>`).join("")||'<tr><td colspan="6">Không có kết quả.</td></tr>'}</table>`;
+$("#sf").value=sf;$("#sq").oninput=e=>{q=e.target.value;render();const s=$("#sq");s.focus();s.setSelectionRange(q.length,q.length)};$("#sf").onchange=e=>{sf=e.target.value;render()};$$("[data-i]").forEach(b=>b.onclick=()=>{cur=+b.dataset.i;view="prof";render()})}
+else{const c=C[cur];v.innerHTML=`<div class="tools"><button class="btn s o" id="bk">← Danh sách</button></div><h3><span class="av">${ini(c[0])}</span>${c[0]} <span class="st s${c[3]}">${ST[c[3]]}</span></h3><div class="pf"><div class="card"><h3>Thông tin cơ bản</h3><ul><li>SĐT: 09xx xxx xxx (giả lập)</li><li>Đăng ký: 12/2025</li><li>Nguồn: Giới thiệu</li><li>Phụ trách: ${c[5]}</li></ul></div><div class="card"><h3>Lịch sử trải nghiệm</h3><ul><li>Tổng: ${c[1]} lượt</li><li>Gần nhất: ${c[2]?c[2]+" ngày trước":"Hôm nay"}</li><li>Trung bình: 40 phút/lượt</li></ul></div><div class="card"><h3>Lịch sử liên hệ</h3><ul><li>Gọi hỏi thăm — 3 tuần trước</li><li>Nhắn tin nhắc lịch — 1 tuần trước</li></ul></div><div class="card"><h3>Nhu cầu & sản phẩm quan tâm</h3><ul><li>Quan tâm: sản phẩm A (giả lập)</li><li>Ghi chú: muốn trải nghiệm thêm</li></ul></div><div class="card" style="grid-column:1/-1"><h3>Lịch chăm sóc tiếp theo</h3><ul><li>${c[4]} — nhân viên ${c[5]} phụ trách</li></ul></div></div>`;$("#bk").onclick=()=>{view="list";render()}}}
+$$(".side button").forEach(b=>b.onclick=()=>{view=b.dataset.v;render()});render();
+// Form
+const rules={name:v=>v.trim().length>=2||"Vui lòng nhập họ tên.",phone:v=>/^(0|\+84)\d{9}$/.test(v.replace(/[\s.-]/g,""))||"Số điện thoại chưa hợp lệ.",center:v=>v.trim()!==""||"Vui lòng nhập tên trung tâm.",city:v=>v.trim()!==""||"Vui lòng nhập tỉnh/thành phố."};
+$("#f").onsubmit=async e=>{e.preventDefault();let ok=true;
+for(const k in rules){const r=rules[k]($("#"+k).value);$(`[data-e=${k}]`).textContent=r===true?"":r;if(r!==true)ok=false}
+$("[data-e=consent]").textContent=$("#consent").checked?"":"Vui lòng đồng ý để chúng tôi liên hệ.";if(!$("#consent").checked)ok=false;
+const m=$("#msg");if(!ok){m.className="bad";m.textContent="Vui lòng kiểm tra lại các trường được đánh dấu.";return}
+if(!ENDPOINT){m.className="info";m.textContent="Chế độ demo: dữ liệu CHƯA được gửi đi. Cần cấu hình endpoint backend (biến ENDPOINT) để nhận đăng ký thực tế.";return}
+const b=$("#sub");b.disabled=true;b.textContent="Đang gửi…";
+try{const r=await fetch(ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(Object.fromEntries(["name","phone","center","city","count","tool","need"].map(k=>[k,$("#"+k).value])))});if(!r.ok)throw 0;m.className="ok";m.textContent="Đã gửi thành công. Chúng tôi sẽ liên hệ sớm.";$("#f").reset()}catch{m.className="bad";m.textContent="Gửi thất bại. Vui lòng thử lại sau."}
+b.disabled=false;b.textContent="ĐĂNG KÝ DEMO MIỄN PHÍ"};
+const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}}),{threshold:.1});$$(".rv").forEach(x=>io.observe(x));
+</script>
+</body>
+</html>
